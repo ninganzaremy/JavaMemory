@@ -1,20 +1,26 @@
 package bookcatalog;
 
 
-public class Book {
+public class Book implements BookReadOnly {
     private int id;
     private String title;
     private String author;
     private Price price;
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public String getTitle() {
         return title;
     }
+    public void setTitle(String title) {
+       this.title = title;
+    }
 
+    @Override
     public String getAuthor() {
         return author;
     }
@@ -26,14 +32,17 @@ public class Book {
         this.price = new Price(price);
     }
 
+    @Override
     public String toString() {
         return title + " by " + author;
     }
-    //TODO: Remove Escaping reference
+
+    @Override
     public Price getPrice() {
         return this.price;
     }
 
+    @Override
     public void setPrice(Double price) {
         this.price = new Price(price);
     }

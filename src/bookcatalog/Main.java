@@ -13,6 +13,8 @@ public class Main {
 
         //get price of book called Tom Jones in EUR
         System.out.println(bc.findBookByName("Tom Jones").getPrice().convert("EUR"));
+        bc.printAllBooks();
+
 
     }
 }
